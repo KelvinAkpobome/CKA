@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nfs-pod
+spec:
+  containers:
+  - image: nginx:alpine
+    name: web-server
+    volumeMounts:
+    - name: nfs-data
+      mountPath: /path/to/filesystem
+  volumes:
+  - name: nfs-data
+    nfs: 
+    server: 1.2.3.4 
+    path: /some/path

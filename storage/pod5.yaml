@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-demo
+spec:
+  containers:
+  - image: nginx:alpine
+    name: web-server
+    volumeMounts:
+    - name: config
+      mountPath: /path/to/filesystem
+      readOnly: true
+  volumes:
+  - name: config
+    configMap:
+      name: test 
+      items:
+      - key: laptop.make
+        path: laptop-make.conf 

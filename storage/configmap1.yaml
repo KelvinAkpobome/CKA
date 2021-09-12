@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+ name: test-config
+ namespace: default
+data:
+ laptop.make: HP
+ laptop.model: Core-i5
+ laptop.trim: Shelby 

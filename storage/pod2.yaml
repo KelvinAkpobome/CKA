@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: shell-demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+    - name: bar
+      valueFrom:
+        configMapKeyRef:
+          name: test  
+          key: bar 
